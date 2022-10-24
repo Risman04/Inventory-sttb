@@ -46,7 +46,7 @@
                 <li class="nav-item">
                     <a href="{{ route('ruangan.index') }}" class="nav-link {{Request::is('admin/ruangan*') ? 'active' : ''}}">
                       <i class="nav-icon fas fa-th"></i>
-                      <p>
+                      <p >
                         Data Ruangan
                       </p>
                     </a>
@@ -91,7 +91,7 @@
                   onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();"
                   role="button">
-                <i class="fas fa-th-large"></i> Logout
+                <i class="fas fa-th-large fas fa-sign-out"></i> Logout
               </a>
               <form action="{{ route('logout') }}" id="logout-form" method="post">
                   @csrf

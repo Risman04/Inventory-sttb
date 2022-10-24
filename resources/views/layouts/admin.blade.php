@@ -27,13 +27,21 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
   @yield('style')
   <link rel="stylesheet" href="{{ asset('DataTables/datatables.min.css') }}">
+
+<style>
+
+    
+
+</style>
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{ asset('assets/images/sttb.png')}}" alt="STTBandnung" height="500" width="500">
+    <img class="spinner-grow" style="width: 35rem; height: 35rem;" src="{{ asset('assets/images/sttb.png')}}" alt="STTBandnung" height="500" width="500">
   </div>
 
   <!-- Navbar -->

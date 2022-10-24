@@ -18,9 +18,9 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
+  <div class="card card-outline card-success">
     <div class="card-header text-center">
-      <h1><strong>Login </strong>Inventory</h1>
+      <h1><strong>Login </strong><span style="color: rgb(39, 145, 18)">Inventory</span></h1>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
@@ -32,7 +32,7 @@
              name="username" value="{{ old('username')}}">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class="fas fa-user"></span>
               </div>
             </div>
             @error('username')
@@ -42,7 +42,8 @@
             @enderror
         </div>
         <div class="input-group mb-3">
-          <input autofocus type="email" class="form-control @error('email') is-invalid @enderror " placeholder="Email" name="email">
+          <input type="email" class="form-control @error('email') is-invalid @enderror " placeholder="Email"
+          name="email" value="{{ old('email') }}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -78,7 +79,7 @@
           </div> --}}
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-outline-success btn-block">Sign In</button>
           </div>
           <!-- /.col -->
         </div>

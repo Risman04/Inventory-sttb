@@ -33,7 +33,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Ketahanan</label>
+                                <label class="form-label">Ketahanan Barang</label>
                                 <input type="text" class="form-control  @error('ketahanan') is-invalid @enderror"
                                     name="ketahanan">
                                 @error('ketahanan')

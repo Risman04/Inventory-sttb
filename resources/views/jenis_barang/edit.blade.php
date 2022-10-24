@@ -24,6 +24,16 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
+                                <label class="form-label">Merk</label>
+                                <input type="text" class="form-control  @error('merk') is-invalid @enderror"
+                                    name="merk" value="{{ $jenis_barang->merk }}">
+                                @error('merk')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Ketahanan Barang</label>
                                 <input type="text" class="form-control  @error('ketahanan') is-invalid @enderror"
                                     name="ketahanan" value="{{ $jenis_barang->ketahanan }}">
@@ -37,7 +47,27 @@
                                 <label class="form-label">Lama Pemakaian</label>
                                 <input type="text" class="form-control  @error('lama_pemakaian') is-invalid @enderror"
                                     name="lama_pemakaian" value="{{ $jenis_barang->lama_pemakaian }}">
-                                @error('lama_pemakain')
+                                @error('lama_pemakaian')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Jumlah</label>
+                                <input type="number" class="form-control  @error('jumlah') is-invalid @enderror"
+                                    name="jumlah" value="{{ $jenis_barang->jumlah }}">
+                                @error('jumlah')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tempat</label>
+                                <input type="text" class="form-control  @error('tempat') is-invalid @enderror"
+                                    name="tempat" value="{{ $jenis_barang->tempat }}">
+                                @error('tempat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

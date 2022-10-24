@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         $admin -> name = "Administrator";
         $admin -> username = "admin";
         $admin -> email ="admin@gmail.com";
-        $admin -> password=bcrypt("rahasia");
+        $admin -> password=bcrypt("12345");
         $admin -> level = "1";
         $admin->save();
 
@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
         $user -> name = "User";
         $user -> username = "user";
         $user -> email ="user@gmail.com";
-        $user -> password=bcrypt("rahasia");
+        $user -> password=bcrypt("09876");
         $user -> level = "2";
         $user->save();
     }

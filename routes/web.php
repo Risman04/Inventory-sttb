@@ -30,12 +30,23 @@ Route::get('/', function () {
 Route::controller(LoginController::class)->group(function(){
     Route::get('login', 'index')->name('login');
     Route::post('login/proses', 'proses');
+    Route::get('logout', 'logout');
 });
 
 
-Route::group(['middleware' => ['Auth']], function() {
+Route::group(['middleware' => ['auth']], function() {
     Route::group(['middleware' => ['cekUserLogin:1']], function() {
-        Route::resource('inventory', Admin::class);
+            Route::get('/', function(){
+                return view('admin.index');
+            });
+            Route::resource('ruangan', RuanganController::class);
+            Route::resource('jenis_barang', JenisBarangController::class);
+            Route::resource('barang', BarangController::class);
+            Route::resource('user_group', User_groupController::class);
+        });
+
+    Route::group(['middleware' => ['cekUserLogin:2']], function() {
+        Route::resource('barang', Barang::class);
     });
 });
 
@@ -45,7 +56,7 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
-// // Inventory
+// Inventory
 // Route::group(['prefix'=>'inventory', 'middleware'=>['auth']], function() {
 //     Route::get('/', function(){
 //         return view('admin.index');

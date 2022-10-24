@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
     public function index() {
         if($user = Auth::user()) {
             if($user->level == '1') {
-                return redirect()->intended('admin');
+                return redirect()->intended('../../../admin');
             }else if ($user->level == '2') {
-                return redirect()->intended('admin');
+                return redirect()->intended('barang');
             }
         }
 
@@ -38,16 +38,27 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if($user->level == '1') {
-                return redirect()->intended('admin');
+                return redirect()->intended('../../../admin');
             }else if ($user->level == '2') {
-                return redirect()->intended('admin');
+                return redirect()->intended('barang');
             }
 
             return redirect()->intended('/');
         }
 
         return back()->withErrors([
-            'username' => 'Maaf, data yang anda input salah',
+            'password' => 'Maaf, data yang anda input salah',
         ])->onlyInput('username');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }
