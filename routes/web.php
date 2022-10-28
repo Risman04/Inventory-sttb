@@ -36,18 +36,15 @@ Route::controller(LoginController::class)->group(function(){
 
 Route::group(['middleware' => ['auth']], function() {
     Route::group(['middleware' => ['cekUserLogin:1']], function() {
-            Route::get('/', function(){
+        Route::get('/', function(){
                 return view('admin.index');
             });
-            Route::resource('ruangan', RuanganController::class);
-            Route::resource('jenis_barang', JenisBarangController::class);
-            Route::resource('barang', BarangController::class);
-            Route::resource('user_group', User_groupController::class);
-        });
-
-    Route::group(['middleware' => ['cekUserLogin:2']], function() {
-        Route::resource('barang', Barang::class);
+        Route::resource('ruangan', RuanganController::class);
+        Route::resource('jenis_barang', JenisBarangController::class);
+        Route::resource('barang', BarangController::class);
+        Route::resource('user_group', User_groupController::class);
     });
+
 });
 
 

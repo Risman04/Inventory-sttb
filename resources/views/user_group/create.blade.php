@@ -26,9 +26,9 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Nama</label>
-                                <input type="text" class="form-control  @error('nama') is-invalid @enderror"
-                                    name="nama">
-                                @error('nama')
+                                <input type="text" class="form-control  @error('name') is-invalid @enderror"
+                                    name="name">
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

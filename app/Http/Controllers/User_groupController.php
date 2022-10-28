@@ -43,7 +43,7 @@ class User_groupController extends Controller
         // validasi
         $validated = $request->validate([
             'role' => 'required',
-            'nama' => 'required'
+            'name' => 'required'
         ]);
 
         $user_group = new User_group();
@@ -90,7 +90,7 @@ class User_groupController extends Controller
         // validasi
         $validated = $request->validate([
             'role' => 'required',
-            'nama' => 'required'
+            'name' => 'required'
         ]);
 
         $user_group = User_group::findOrFail($id);

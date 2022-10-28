@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-15">
+            <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
@@ -30,7 +30,7 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $data->role }}</td>
-                                            <td>{{ $data->nama }}</td>
+                                            <td>{{ $data->name }}</td>
                                             <td>
                                                 <form action="{{ route('user_group.destroy', $data->id) }}" method="post">
                                                     @csrf

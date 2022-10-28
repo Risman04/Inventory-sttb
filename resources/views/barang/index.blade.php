@@ -28,7 +28,7 @@
                                     @foreach ($barang as $data)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td><a href="http://127.0.0.1:8000/home/jenis_barang">{{ $data->jenis_barang->nama_barang }}</a></td>
+                                            <td><a href="http://127.0.0.1:8000/jenis_barang">{{ $data->jenis_barang->nama_barang }}</a></td>
                                             <td>
                                                 <form action="{{ route('barang.destroy', $data->id) }}" method="post">
                                                     @csrf
