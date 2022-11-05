@@ -12,7 +12,7 @@ class LoginController extends Controller
             if($user->level == '1') {
                 return redirect()->intended('../../../../admin');
             }else if ($user->level == '2') {
-                return redirect()->intended('barang');
+                return redirect()->intended('../../../../admin');
             }
         }
 
@@ -40,7 +40,7 @@ class LoginController extends Controller
             if($user->level == '1') {
                 return redirect()->intended('../../../../admin');
             }else if ($user->level == '2') {
-                return redirect()->intended('barang');
+                return redirect()->intended('../../../../admin');
             }
 
             return redirect()->intended('/');
