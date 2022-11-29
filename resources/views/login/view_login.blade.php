@@ -4,6 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        body {
+            background-image: linear-gradient(to right, rgba(76, 175, 98, 0.26), rgba(83, 156, 199, 0.274));
+        }
+
+        .card {
+            background-image: linear-gradient(to right, rgba(76, 175, 98, 0.26), rgba(83, 156, 199, 0.274));
+        }
+    </style>
+
   <title>Halaman Login Inventory</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -56,7 +68,7 @@
             @enderror
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control @error('password') is-invalid @enderror " placeholder="Password" name="password">
+          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror " placeholder="Password" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -79,7 +91,7 @@
           </div> --}}
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-outline-success btn-block">Sign In</button>
+            <button type="submit" class="btn btn btn-light btn-block">Sign In</button>
           </div>
           <!-- /.col -->
         </div>

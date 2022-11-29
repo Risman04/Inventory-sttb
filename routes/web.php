@@ -7,6 +7,7 @@ use App\Http\Controllers\JenisBarangController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\User_groupController;
 
+use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\LoginController;
 
 
@@ -25,6 +26,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/', [LayoutController::class, 'index'])->middleware('auth');
+Route::get('/home', [LayoutController::class, 'index'])->middleware('auth');
 // Route::get('login', [LoginController::class, 'index'])->name('login');
 
 Route::controller(LoginController::class)->group(function(){
@@ -34,12 +38,8 @@ Route::controller(LoginController::class)->group(function(){
 });
 
 
-    Route::group(['prefix'=>'inventory', 'middleware' => ['auth']], function() {
-                Route::get('/', function(){
-                    return view('admin.index');
-                });
+    Route::group(['middleware' => ['auth']], function() {
         Route::group(['middleware' => ['cekUserLogin:1']], function() {
-
             Route::resource('ruangan', RuanganController::class);
             Route::resource('jenis_barang', JenisBarangController::class);
             Route::resource('barang', BarangController::class);

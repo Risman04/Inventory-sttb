@@ -29,80 +29,43 @@
         </div>
       </div>
 
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="{{url('admin')}}" class="nav-link {{Request::is('admin') ? 'active' : ''}}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{ route('ruangan.index') }}" class="nav-link {{Request::is('admin/ruangan*') ? 'active' : ''}}">
-                      <i class="nav-icon fas fa-th"></i>
-                      <p >
-                        Data Ruangan
-                      </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('jenis_barang.index') }}" class="nav-link {{Request::is('admin/jenis_barang*') ? 'active' : ''}}">
-                      <i class="nav-icon fas fa-th"></i>
-                      <p>
-                        Data Jenis Barang
-                      </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('barang.index') }}" class="nav-link {{Request::is('admin/barang*') ? 'active' : ''}}">
-                      <i class="nav-icon fas fa-th"></i>
-                      <p>
-                        Data Barang
-                      </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('user_group.index') }}" class="nav-link {{Request::is('admin/user_group*') ? 'active' : ''}}">
-                      <i class="nav-icon fas fa-th"></i>
-                      <p>
-                        Data Pengguna
-                      </p>
-                    </a>
-                </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Keluar
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a class="nav-link" href=" {{ route('logout') }} "
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();"
-                  role="button">
-                <i class="fas fa-th-large fas fa-sign-out"></i> Logout
-              </a>
-              <form action="{{ route('logout') }}" id="logout-form" method="post">
-                  @csrf
-              </form>
-            </li>
-            </ul>
-          </li>
-
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+            @include('layouts.menu')
         </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+    </nav>
+    <!-- /.sidebar-menu -->
+</div>
+<!-- /.sidebar -->
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>
+                        @yield('judul')
+                    </h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        @yield('isi')
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+

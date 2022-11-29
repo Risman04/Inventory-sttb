@@ -30,7 +30,7 @@
 
 <style>
 
-    
+
 
 </style>
 
@@ -73,7 +73,7 @@
     <section class="content">
     <!-- /.container-fluid -->
       <div class="container-fluid">
-        @yield('content')
+        @yield('isi')
       </div>
     </section>
     <!-- /.content -->

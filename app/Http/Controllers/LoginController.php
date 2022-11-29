@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index() {
-        if($user = Auth::user()) {
-            if($user->level == '1') {
-                return redirect()->intended('../../../../admin');
-            }else if ($user->level == '2') {
-                return redirect()->intended('../../../../admin');
-            }
+        if(Auth::user()) {
+            // if($user->level == '1') {
+            //     return redirect()->intended('../../../../admin');
+            // }else if ($user->level == '2') {
+            //     return redirect()->intended('../../../../admin');
+            // }
+            return redirect()->intended('home');
         }
 
         return view('login.view_login');
@@ -37,11 +38,16 @@ class LoginController extends Controller
         if(Auth::attempt($kredensial)) {
             $request->session()->regenerate();
             $user = Auth::user();
-            if($user->level == '1') {
-                return redirect()->intended('../../../../admin');
-            }else if ($user->level == '2') {
-                return redirect()->intended('../../../../admin');
-            }
+            // if($user->level == '1') {
+            //     return redirect()->intended('../../../../admin');
+            // }else if ($user->level == '2') {
+            //     return redirect()->intended('../../../../admin');
+            // }
+
+                if($user)
+                {
+                    return redirect()->intended('home');
+                }
 
             return redirect()->intended('/');
         }
